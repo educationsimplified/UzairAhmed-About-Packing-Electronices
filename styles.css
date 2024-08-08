@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+section#about {
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.floating-btn a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .profile-img {
+        width: 120px;
+    }
+
+    .floating-btn {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-img {
+        width: 100px;
+    }
+
+    .floating-btn {
+        width: 60px;
+        height: 60px;
+    }
+}
