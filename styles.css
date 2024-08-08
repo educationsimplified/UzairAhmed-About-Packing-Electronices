@@ -6,25 +6,33 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: brown;
     color: white;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
 }
 
-section#about {
+main {
     padding: 20px;
-    text-align: center;
 }
 
-.profile-img {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
+#about {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+#about h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#about p {
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 a {
-    color: #4CAF50;
+    color: blue;
     text-decoration: none;
 }
 
@@ -32,47 +40,26 @@ a:hover {
     text-decoration: underline;
 }
 
-.floating-btn {
+.draggable {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 100px;
-    height: 100px;
-    background-color: #4CAF50;
+    background-color: #ff6600;
     color: white;
+    padding: 10px 20px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    cursor: pointer;
-}
-
-.floating-btn a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
 }
 
-@media (max-width: 768px) {
-    .profile-img {
-        width: 120px;
-    }
-
-    .floating-btn {
-        width: 80px;
-        height: 80px;
-    }
+.draggable a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-@media (max-width: 480px) {
-    .profile-img {
-        width: 100px;
-    }
-
-    .floating-btn {
-        width: 60px;
-        height: 60px;
-    }
+.draggable a:hover {
+    text-decoration: underline;
 }
