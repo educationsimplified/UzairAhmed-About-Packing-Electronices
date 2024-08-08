@@ -4,26 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uzair Ahmed B2B Services</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .about-section {
+            margin: 20px 0;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+        }
+
+        .floating-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            user-select: none;
+        }
+
+        .floating-icon:after {
+            content: "Order Now";
+            display: block;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .instagram-link {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .instagram-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .instagram-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .floating-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 12px;
+            }
+            .floating-icon:after {
+                font-size: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <div class="container">
         <h1>Welcome to Uzair Ahmed B2B Services</h1>
-        <p>Your trusted partner for refurbished laptops, hardware, packaging items, and more in Varanasi.</p>
-    </header>
-
-    <section id="about">
-        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.instagram.com%2Fuzairvibes%2F&psig=AOvVaw2Usn70WPnmouHulw4DB1Gc&ust=1723211503932000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCODos5_F5YcDFQAAAAAdAAAAABAE" alt="Uzair Ahmed" class="profile-img">
-        <h2>About Me</h2>
-        <p>Hi, I'm Uzair Ahmed. I provide B2B services in bulk, specializing in refurbished laptops, laptop hardware, SSDs, packaging items, industrial tapes, staplers, and more. My services are currently focused on Varanasi city, with plans to expand in the future. My target clients include coaching institutes, schools, skill centers, and packing industries. I am currently working with SEG Academy, one of the best trading institutes in Varanasi.</p>
-        <p>For inquiries or to schedule a meeting, call us at <a href="tel:+919335723334">+91 9335723334</a> or <a href="https://wa.link/4jrun4" target="_blank">click here to WhatsApp</a>.</p>
-        <p>Follow me on Instagram: <a href="https://www.instagram.com/uzairvibes?igsh=MXEwczdtd290aXl0Zw==" target="_blank">Uzair Ahmed on Instagram</a></p>
-    </section>
-
-    <div id="order-now" class="floating-btn">
-        <a href="https://wa.link/4jrun4" target="_blank">Order Now</a>
+        <div class="about-section">
+            <h2>About Us</h2>
+            <p>Uzair Ahmed provides B2B services like refurbished laptops, laptop hardware, SSDs, packaging items, industrial tapes, staplers, and many more, in bulk. Currently targeting Varanasi city with plans to expand in the future. Our target groups include coaching institutes, schools, skill centers, and packing industries. We are currently working with SEG Academy, one of the best trading institutes in Varanasi.</p>
+        </div>
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>For inquiries, call +91 9335723334 or click <a href="https://wa.link/4jrun4" target="_blank">here to WhatsApp</a>.</p>
+        </div>
+        <div class="instagram-link">
+            <p>Follow us on Instagram: <a href="https://www.instagram.com/uzairvibes?igsh=MXEwczdtd290aXl0Zw==" target="_blank">uzairvibes</a></p>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="floating-icon" id="floatingIcon"></div>
+
+    <script>
+        // Drag functionality for floating icon
+        const icon = document.getElementById('floatingIcon');
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        icon.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - icon.getBoundingClientRect().left;
+            offsetY = e.clientY - icon.getBoundingClientRect().top;
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+                document.removeEventListener('mousemove', onMouseMove);
+            });
+        });
+
+        function onMouseMove(e) {
+            if (!isDragging) return;
+            const x = e.clientX - offsetX;
+            const y = e.clientY - offsetY;
+            icon.style.left = `${x}px`;
+            icon.style.top = `${y}px`;
+        }
+
+        // Redirect on click
+        icon.addEventListener('click', () => {
+            window.location.href = 'https://wa.link/4jrun4';
+        });
+    </script>
 </body>
 </html>
